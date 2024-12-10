@@ -28,6 +28,7 @@ kubectl apply -f debug-pod.yml
 kubectl exec -it dns-debug -- sh
 # Perform DNS checks, ping, etc.
 
+
 # Monitoring Scripts for k3s and Linkerd
 
 ---
