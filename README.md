@@ -26,9 +26,8 @@ Creates a simple "dns-debug" Pod on your cluster. It runs a `busybox` container 
 ```bash
 kubectl apply -f debug-pod.yml
 kubectl exec -it dns-debug -- sh
-# Perform DNS checks, ping, etc.
 
-
+```
 # Monitoring Scripts for k3s and Linkerd
 
 ---
@@ -47,7 +46,7 @@ Monitors k3s logs (via `journalctl`) for errors, logs new occurrences, and keeps
 ```bash
 chmod +x k3s_error_monitor.sh
 ./k3s_error_monitor.sh &
-
+```
 ### **k3s_restart_monitor.sh**
 **Purpose**:  
 Monitors the k3s service for restarts and logs each occurrence, while maintaining a total restart count.
@@ -61,7 +60,7 @@ Monitors the k3s service for restarts and logs each occurrence, while maintainin
 ```bash
 chmod +x k3s_restart_monitor.sh
 ./k3s_restart_monitor.sh &
-
+```
 ### **linkerd_test.sh**
 **Purpose**:  
 Generates a report of outbound TCP errors collected by Linkerd from pods in a specified namespace (default: `default`). The script maps target IPs from Linkerd metrics back to their corresponding pods to pinpoint sources of errors.
@@ -77,7 +76,7 @@ Generates a report of outbound TCP errors collected by Linkerd from pods in a sp
 chmod +x linkerd_test.sh
 ./linkerd_test.sh
 cat linkerd_outbound_errors_report.txt
-
+```
 # ping_monitor.sh
 
 ## Purpose
@@ -98,3 +97,4 @@ Pings a predefined list of nodes and logs the results to assess network health a
    ```bash
    chmod +x ping_monitor.sh
    ./ping_monitor.sh &
+```
