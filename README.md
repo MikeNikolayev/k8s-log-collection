@@ -1,6 +1,6 @@
 # K8s Log Collection and Monitoring Scripts
 
-This repository contains a set of scripts and configuration files designed to help with logging, monitoring, and troubleshooting Kubernetes clusters and related services. The tools here target common debugging scenarios, such as DNS resolution issues, k3s errors, service restarts, network connectivity, and Linkerd outbound TCP error analysis.
+This repository contains a set of scripts and configuration files designed to assist with logging, monitoring, and troubleshooting Kubernetes clusters and related services. The tools address common debugging scenarios such as DNS resolution issues, k3s errors, service restarts, network connectivity, and Linkerd outbound TCP error analysis.
 
 ## Contents
 
@@ -15,12 +15,12 @@ This repository contains a set of scripts and configuration files designed to he
 ### debug-pod.yml
 
 **Purpose:**  
-Creates a simple "dns-debug" Pod on your cluster. It runs a `busybox` container that remains alive indefinitely, allowing you to exec into it for DNS checks and other low-level network diagnostics. The pod mounts a host directory to store logs and other data you may want to collect.
+Creates a simple "dns-debug" Pod on your cluster. It runs a `busybox` container that remains alive indefinitely, allowing you to exec into it for DNS checks and other low-level network diagnostics. The pod mounts a host directory to store logs and other data.
 
 **Key Features:**
-- Uses `busybox` image for minimalistic troubleshooting environment.
+- Uses the `busybox` image for a minimalistic troubleshooting environment.
 - Persistent volume mount from the host at `/var/tmp/dns-monitor`.
-- Ideal for on-the-fly DNS lookups (`nslookup`, `dig` if installed, etc.) and network queries.
+- Ideal for on-the-fly DNS lookups (`nslookup`, `dig`, etc.) and network queries.
 
 **Usage:**
 ```bash
@@ -31,8 +31,6 @@ kubectl exec -it dns-debug -- sh
 # Monitoring Scripts for k3s and Linkerd
 
 ---
-
-## Scripts
 
 ### **k3s_error_monitor.sh**
 **Purpose**:  
