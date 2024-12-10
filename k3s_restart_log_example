@@ -1,0 +1,9 @@
+sudo systemctl status k3s
+● k3s.service - Lightweight Kubernetes
+     Loaded: loaded (/usr/lib/systemd/system/k3s.service; enabled; preset: enabled)
+     Active: active (running) since Sat 2024-08-31 17:04:22 UTC; 8s ago
+       Docs: https://k3s.io
+    Process: 2257070 ExecStartPre=/usr/local/bin/system-config-check.sh (code=exited, status=0/SUCCESS)
+    Process: 2257076 ExecStartPre=/bin/sh -xc ! /usr/bin/systemctl is-enabled --quiet nm-cloud-setup.service (code=exited, status=0/SUCCESS)
+    Process: 2257080 ExecStartPre=/sbin/modprobe br_netfilter (code=exited, status=0/SUCCESS)
+    Process: 2257082 ExecStartPre=/sbin/modprobe overlay (code=exited, status=0/SUCCESS)

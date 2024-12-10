@@ -1,0 +1,19 @@
+# dns-debug-pod.yaml
+apiVersion: v1
+kind: Pod
+metadata:
+  name: dns-debug
+spec:
+  containers:
+  - name: dns-debug
+    image: docker.io/rancher/mirrored-library-busybox:1.36.1
+    command: ["/bin/sh", "-c", "while true; do sleep 30; done;"]  # Keeps the pod running
+    volumeMounts:
+    - mountPath: /mnt/dns-logs
+      name: dns-logs
+  volumes:
+  - name: dns-logs
+    hostPath:
+      path: /var/tmp/dns-monitor  # Directory on the host node
+      type: DirectoryOrCreate     # Ensures the directory is created if it doesn't exist
+
